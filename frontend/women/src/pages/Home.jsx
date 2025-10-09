@@ -66,10 +66,10 @@ const HeroSection = () => (
           Esse irure proident cillum anim id sunt aliqua cillum dolore minim cillum anim veniam excepteur.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4 max-w-md mx-auto md:mx-0">
-          <input 
-            type="email" 
-            placeholder="Enter your email address" 
-            className="flex-grow w-full px-5 py-3 rounded-full border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-rose-400 transition" 
+          <input
+            type="email"
+            placeholder="Enter your email address"
+            className="flex-grow w-full px-5 py-3 rounded-full border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-rose-400 transition"
           />
           <button className="bg-rose-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-rose-600 transition-all shadow-lg hover:shadow-xl flex-shrink-0">
             Get Started
@@ -77,9 +77,9 @@ const HeroSection = () => (
         </div>
       </div>
       <div className="flex justify-center p-4">
-        {/* Placeholder for the hero image. Replace the div with your <img> tag. */}
-        <div className="w-full max-w-md h-96 bg-gradient-to-br from-rose-200 to-pink-300 rounded-3xl flex items-center justify-center shadow-2xl">
-            <p className="text-rose-600 font-medium"></p>
+        {/* The image is now responsive and will cover its container */}
+        <div className="w-full max-w-md h-96 rounded-3xl shadow-2xl overflow-hidden">
+          <img src="https://placehold.co/600x800/fecdd3/db2777?text=SafeGuard" alt="Diverse women standing together" className="w-full h-full object-cover" />
         </div>
       </div>
     </div>
@@ -103,11 +103,9 @@ const FeaturesSection = () => {
                 </p>
             </div>
             <div className="container mx-auto px-6 mt-16 grid md:grid-cols-2 gap-16 items-center">
-                {/* Placeholder for padlock image */}
-                <div className="w-full h-96 bg-slate-100 rounded-3xl flex items-center justify-center shadow-xl">
-                    <p className="text-slate-500 font-medium">
-                        <img src="/women2.png" alt="" />
-                    </p>
+                {/* The image is now responsive and will cover its container */}
+                <div className="w-full h-128 rounded-3xl shadow-xl overflow-hidden">
+                     <img src="/women2.png" alt="A secure padlock" className="w-full h-full object-fit" />
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {features.map(feature => (
@@ -128,31 +126,42 @@ const FeaturesSection = () => {
 };
 
 const AboutUsSection = () => {
-    const values = [
-        { title: "Innovation", description: "We are pioneers in our field, constantly exploring new ideas and pushing boundaries." },
-        { title: "Customer-Centric", description: "Our clients are at the heart of everything we do. We are committed to delivering value." },
-        { title: "Expertise", description: "Our team consists of industry experts who bring a wealth of knowledge to each project." },
-        { title: "Integrity", description: "We operate with the highest level of integrity, ensuring transparency and honesty." }
-    ];
     return (
         <section id="about" className="py-24 bg-rose-50">
-            <div className="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-                <div>
+            <div className="container mx-auto px-6">
+                <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold text-gray-800">About us</h2>
-                    <p className="mt-4 text-gray-600">
-                        Aliqua consectetur laborum anim anim quis elit sit cupidatat ipsum cupidatat nostrud adipisicing.
-                    </p>
-                    <div className="mt-8 grid sm:grid-cols-2 gap-8">
-                        {values.map(value => (
-                            <div key={value.title}>
-                                <h3 className="text-xl font-bold text-rose-600">{value.title}</h3>
-                                <p className="mt-2 text-gray-600">{value.description}</p>
-                            </div>
-                        ))}
-                    </div>
                 </div>
-                 <div className="w-full h-96 bg-slate-200 rounded-3xl flex items-center justify-center shadow-xl">
-                    <p className="text-slate-500 font-medium">[Abstract brand image]</p>
+                <div className="grid md:grid-cols-2 gap-16 items-center">
+                    {/* Left Part - Large Heading */}
+                    <div className="text-center md:text-left">
+                        <h3 className="text-5xl md:text-6xl font-extrabold text-gray-800 leading-tight">
+                            We are here to <span className="text-rose-600">Gaurd you</span>
+                        </h3>
+                    </div>
+                    
+                    {/* Right Part - Details */}
+                    <div className="space-y-8 text-gray-700">
+                        <div>
+                            <h4 className="font-bold text-xl mb-2 text-gray-800">What We Do</h4>
+                            <ul className="list-disc list-inside space-y-2 text-gray-600">
+                                <li><strong>Emergency Alerts:</strong> Quickly notify your loved ones or authorities in case of danger.</li>
+                                <li><strong>Local Safety Resources:</strong> Find shelters, hospitals, helplines, and police stations nearby.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-xl mb-2 text-gray-800">Our Vision</h4>
+                            <p className="text-gray-600">
+                                To create a world where women can move freely without fear, backed by technology that protects, supports, and empowers.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-xl mb-2 text-gray-800">Our Commitment</h4>
+                            <p className="text-gray-600">
+                                We prioritize your privacy, security, and trust. Every feature is designed with your safety in mind, ensuring you have help at your fingertips when you need it most.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -184,3 +193,4 @@ export default function Home() {
     </div>
   );
 }
+
