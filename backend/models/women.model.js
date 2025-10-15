@@ -23,7 +23,7 @@ const womenSchema = new mongoose.Schema({
     location:locationSchema
 },{timestamps:true});
 
-womenSchema.statics.hashPassword = async function (password) {
+womenSchema.statics.hashPassword = async function (password) { 
   return await bcrypt.hash(password, 10);
 };
 

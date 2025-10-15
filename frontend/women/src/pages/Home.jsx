@@ -1,7 +1,6 @@
-import React from 'react';
+import { getAlert,resetAlert } from "../components/SpeechRecognition";
 
-// --- SVG Icon Components ---
-// Self-contained icons for the "Features" section to avoid external dependencies.
+import { Link } from "react-router-dom";
 
 const WifiIcon = ({ className }) => (
     <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -33,23 +32,22 @@ const UsersIcon = ({ className }) => (
 );
 
 
-// --- Page Section Components ---
-// Dividing the page into logical sections for better readability.
+
 
 const Navbar = () => (
   <header className="bg-white/90 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
     <div className="container mx-auto px-6 py-4 flex justify-between items-center">
       <div className="text-2xl font-bold text-rose-600">SafeGuard</div>
       <nav className="hidden md:flex items-center space-x-8 text-gray-700">
-        <a href="#home" className="hover:text-rose-600 transition-colors">Home</a>
-        <a href="#about" className="hover:text-rose-600 transition-colors">About Us</a>
-        <a href="#features" className="hover:text-rose-600 transition-colors">Features</a>
-        <a href="#blogs" className="hover:text-rose-600 transition-colors">Blogs</a>
-        <a href="#contact" className="hover:text-rose-600 transition-colors">Contact</a>
+        <a href="/login" className="hover:text-rose-600 transition-colors">Home</a>
+        <a href="/login" className="hover:text-rose-600 transition-colors">About Us</a>
+        <a href="/login" className="hover:text-rose-600 transition-colors">Features</a>
+        <a href="/login" className="hover:text-rose-600 transition-colors">Blogs</a>
+        <a href="/login" className="hover:text-rose-600 transition-colors">Contact</a>
       </nav>
       <div className="flex items-center space-x-4">
-        <button className="hidden sm:block text-gray-700 font-medium hover:text-rose-600 transition-colors">Sign in</button>
-        <button className="bg-rose-500 text-white px-5 py-2 rounded-full font-semibold hover:bg-rose-600 transition-all shadow-md hover:shadow-lg">Sign up</button>
+        <a href="/login"><button className="hidden sm:block text-gray-700 font-medium hover:text-rose-600 transition-colors">Sign in</button></a>
+        <a href="/register"><button className="bg-rose-500 text-white px-5 py-2 rounded-full font-semibold hover:bg-rose-600 transition-all shadow-md hover:shadow-lg">Sign up</button></a>
       </div>
     </div>
   </header>
@@ -60,10 +58,10 @@ const HeroSection = () => (
     <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
       <div className="text-center md:text-left">
         <h1 className="text-5xl md:text-6xl font-extrabold text-gray-800 leading-tight tracking-tight">
-          Emergency SOS
+          Her Safety is not a privilege - It's her Right!
         </h1>
         <p className="mt-4 text-lg text-gray-600 max-w-lg mx-auto md:mx-0">
-          Esse irure proident cillum anim id sunt aliqua cillum dolore minim cillum anim veniam excepteur.
+          
         </p>
         <div className="mt-8 flex flex-col sm:flex-row gap-4 max-w-md mx-auto md:mx-0">
           <input
@@ -71,15 +69,15 @@ const HeroSection = () => (
             placeholder="Enter your email address"
             className="flex-grow w-full px-5 py-3 rounded-full border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-rose-400 transition"
           />
-          <button className="bg-rose-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-rose-600 transition-all shadow-lg hover:shadow-xl flex-shrink-0">
+          <a href="/login"><button className="bg-rose-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-rose-600 transition-all shadow-lg hover:shadow-xl flex-shrink-0">
             Get Started
-          </button>
+          </button></a>
         </div>
       </div>
       <div className="flex justify-center p-4">
-        {/* The image is now responsive and will cover its container */}
+        
         <div className="w-full max-w-md h-96 rounded-3xl shadow-2xl overflow-hidden">
-          <img src="https://placehold.co/600x800/fecdd3/db2777?text=SafeGuard" alt="Diverse women standing together" className="w-full h-full object-cover" />
+          <img src="/women4.png" alt="Diverse women standing together" className="w-full h-full object-cover" />
         </div>
       </div>
     </div>
@@ -115,9 +113,9 @@ const FeaturesSection = () => {
                         </div>
                     ))}
                      <div className="sm:col-span-2 text-center mt-6">
-                         <button className="bg-rose-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-rose-600 transition-all shadow-lg hover:shadow-xl">
+                        <a href="/login"> <button className="bg-rose-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-rose-600 transition-all shadow-lg hover:shadow-xl">
                             Getting Started
-                        </button>
+                        </button></a>
                     </div>
                 </div>
             </div>
@@ -133,14 +131,14 @@ const AboutUsSection = () => {
                     <h2 className="text-4xl font-bold text-gray-800">About us</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-16 items-center">
-                    {/* Left Part - Large Heading */}
+                
                     <div className="text-center md:text-left">
                         <h3 className="text-5xl md:text-6xl font-extrabold text-gray-800 leading-tight">
                             We are here to <span className="text-rose-600">Gaurd you</span>
                         </h3>
                     </div>
                     
-                    {/* Right Part - Details */}
+                   
                     <div className="space-y-8 text-gray-700">
                         <div>
                             <h4 className="font-bold text-xl mb-2 text-gray-800">What We Do</h4>
